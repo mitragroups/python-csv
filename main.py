@@ -16,6 +16,11 @@ with open("data.csv", "r") as file:
     st.write("### Data")
     # st.dataframe(csv) # memunculkan data di halaman 
     editing_df = st.data_editor(csv)    # memunculkan data di halaman dan bisa di edit
+    save_btn = st.button("Save Changes")
+    
+    if save_btn:
+        editing_df.to_csv("data.csv", index=False)
+        st.rerun()
     
     st.bar_chart(csv.set_index("name")["salary"])
     
