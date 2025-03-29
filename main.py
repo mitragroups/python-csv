@@ -14,7 +14,8 @@ with open("data.csv", "r") as file:
     csv = pd.read_csv(file)
     #print(csv) # cetak data di terminal biar lebih rapih
     st.write("### Data")
-    st.dataframe(csv) 
+    # st.dataframe(csv) # memunculkan data di halaman 
+    editing_df = st.data_editor(csv)    # memunculkan data di halaman dan bisa di edit
     
     st.bar_chart(csv.set_index("name")["salary"])
     
