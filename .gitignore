@@ -1,5 +1,6 @@
 # ignore ALL .log files
 *.log
+.venv
 
 # ignore ALL files in ANY directory named temp
 lib/
